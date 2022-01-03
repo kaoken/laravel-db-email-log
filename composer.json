@@ -1,0 +1,25 @@
+{
+    "name": "kaoken/laravel-db-email-log",
+    "description": "Save logs handled by Laravel in DB, and send mail when it is over specified level.",
+    "keywords": ["laravel", "monolog", "email"],
+    "license": "MIT",
+    "homepage": "https://github.com/kaoken/laravel-db-email-log",
+    "require": {
+        "php": ">=8.0.0",
+        "laravel/framework": "v8.77.1.*",
+        "ext-json": "*"
+    },
+    "authors": [
+        {
+            "name": "kaoken",
+            "homepage": "https://github.com/kaoken/laravel-db-email-log"
+        }
+    ],
+    "replace": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Kaoken\\LaravelDBEmailLog\\": "src/"
+        }
+    }
+}
