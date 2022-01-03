@@ -89,7 +89,7 @@ with the driver name `mysql`.
   
   
 
-###  Add to **`config\app.php`** as follows:
+###  Add to **`config\logging.php`** as follows:
 
 - `connection` is the driver name for the data. See `config\database.php`.
 - `model` is a log model.
@@ -110,7 +110,7 @@ It is good to add it under the `'log_level' => env('APP_LOG_LEVEL', 'debug'),` o
 
 
 ```php  
-    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+    'default' => env('LOG_CHANNEL', 'db_log'),
     // Add
     'db_log' => [
         'connection' => 'db_log',
@@ -149,7 +149,7 @@ php artisan migrate
 ```
 
 ### E-Mail
-In the configuration `config\app.php` of the above setting,
+In the configuration `config\logging.php` of the above setting,
 The `Kaoken\LaravelDBEmailLog\Mail\ConfirmationMailToUser::class` of `email_log` is used as the log mail of the target level or higher.
 The template uses `views\vendor\mysql_email_log\log.blade.php`. Change according to the specifications of the application.  
   

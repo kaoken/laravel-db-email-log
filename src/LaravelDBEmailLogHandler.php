@@ -21,15 +21,13 @@ class LaravelDBEmailLogHandler extends AbstractProcessingHandler
     ];
 
 
+
     /**
-     * 実装するハンドラーのログにレコードを書き込みます。
-     *
-     * @param  array $record
-     * @return array
+     * {@inheritDoc}
      */
-    protected function write(array $record)
+    protected function write(array $record): void
     {
-        $config = app()['config']["app.db_log"];
+        $config = app()['config']["logging.db_log"];
 
         $record['pid'] = getmypid();
         $isLocal = false;

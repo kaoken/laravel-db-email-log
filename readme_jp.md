@@ -86,7 +86,7 @@ mysqlの例
   
   
 
-### `config\app.php`へ追加する例
+### `config\logging.php`へ追加する例
 
 - `connection`は、データーばべーすドライバ名。`config\database.php`を参照。
 - `model`は、ログモデル。
@@ -103,7 +103,7 @@ mysqlの例
 `config\app.php` の `'log_level' => env('APP_LOG_LEVEL', 'debug'),`の下あたりに追加するのが良い。  
 
 ```php  
-    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+    'default' => env('LOG_CHANNEL', 'db_log'),
     // 追加
     'db_log' => [
         'connection' => 'db_log',
@@ -142,7 +142,7 @@ php artisan migrate
 ```
 
 ### メール
-上記の設定の `config\app.php`設定では、  
+上記の設定の `config\logging.php`設定では、  
 `email_log`の`Kaoken\LaravelDBEmailLog\Mail\ConfirmationMailToUser::class`は、
 対象レベル以上のログメールとして使用する。
 テンプレートは、`views\vendor\db_email_log\log.blade.php`

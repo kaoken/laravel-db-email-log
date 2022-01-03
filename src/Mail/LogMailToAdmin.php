@@ -32,7 +32,7 @@ class LogMailToAdmin extends Mailable
      */
     public function build()
     {
-        $config = app()['config']["app.db_log"];
+        $config = app()['config']["logging.db_log"];
 
         return $this->view('vendor.db_email_log.log')
             ->subject(env('APP_NAME').' - Log ['.$this->log->level_name.']')

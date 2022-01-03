@@ -46,18 +46,16 @@ class LaravelDBEmailLogServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        config([
-            'logging' => [
-                'channels' => [
-                    'db_log' => [
-                        'driver' => 'custom',
-                        'via' => function () {
-                            $handler = new LaravelDBEmailLogHandler();
-                            return new Logger('db_log', [$handler]);
-                        },
-                    ],
-                ],
-            ],
-        ]);
+//        $config = $this->app->make('config');
+//        $config->set("logging.channels", array_merge(
+//            [
+//                'db_log' => [
+//                    'driver'  => 'monolog',
+//                    'handler' => Kaoken\LaravelDBEmailLog\LaravelDBEmailLogHandler::class,
+//                    'level' => env('LOG_LEVEL', 'debug'),
+//                ]
+//            ],
+//            $config->get("logging.channels", [])
+//        ));
     }
 }

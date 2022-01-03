@@ -20,7 +20,7 @@ class Log extends Model
      */
     public function __construct(array $attributes = [])
     {
-        $config = app()['config']["app.db_log"];
+        $config = app()['config']["logging.db_log"];
         $this->connection = $config['connection'];
         parent::__construct($attributes);
     }

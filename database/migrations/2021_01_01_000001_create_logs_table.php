@@ -15,6 +15,7 @@ class CreateLogsTable extends Migration
     {
         if( !Schema::hasTable('logs') ) {
             Schema::create('logs', function (Blueprint $table) {
+                $table->bigIncrements('id');
                 $table->timestamp('create_tm')->useCurrent();
                 $table->integer('pid');
                 $table->ipAddress('ip');
@@ -26,10 +27,14 @@ class CreateLogsTable extends Migration
                 $table->mediumText('message')->nullable();
                 $table->mediumText('context')->nullable();
             });
-            switch (strtolower(env('DB_CONNECTION')))
+
+            switch (strtolower(app()['config']["database.default"]))
             {
                 case 'mysql':
                     DB::statement("ALTER TABLE `".DB::getTablePrefix()."logs` MODIFY COLUMN `create_tm`  timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6)");
+                    break;
+                case 'pgsql':
+                    DB::statement("ALTER TABLE ".DB::getTablePrefix()."logs ALTER COLUMN create_tm TYPE timestamp(6) USING create_tm::timestamp");
                     break;
             }
         }
