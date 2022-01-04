@@ -5,8 +5,8 @@
     "license": "MIT",
     "homepage": "https://github.com/kaoken/laravel-db-email-log",
     "require": {
-        "php": ">=8.0.0",
-        "laravel/framework": "v8.77.1.*",
+        "php": ">=7.3.0",
+        "laravel/framework": "v8.77.1",
         "ext-json": "*"
     },
     "authors": [

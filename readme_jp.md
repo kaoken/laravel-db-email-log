@@ -2,7 +2,7 @@
 Laravelで扱うログをMysqlに保存し、指定レベル以上の場合メールを送信する。
 
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
-[![composer version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://github.com/kaoken/laravel-db-email-log)
+[![composer version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/kaoken/laravel-db-email-log)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/laravel-db-email-log)
 [![laravel version](https://img.shields.io/badge/Laravel%20version-≧8.77.1-red.svg)](https://github.com/kaoken/laravel-db-email-log)
 
@@ -27,7 +27,7 @@ composer require kaoken/laravel-db-email-log
 ```json 
   "require": {
     ...
-    "kaoken/laravel-db-email-log":"^0.0"
+    "kaoken/laravel-db-email-log":"^1.0"
   }
 ```
 
@@ -93,9 +93,9 @@ mysqlの例
 - `email`は、`true`の場合、`email_send_level`に応じて、メールを送信する。`false`の場合、一切送信しない。
 - `email_send_level`は、ログレベルを指定して、指定したログレベル以上から送信する。優先順位は低いものから、`DEBUG`、`INFO`、`NOTICE`、`WARNING`、
 `ERROR`、`CRITICAL`、`ALERT`、`EMERGENCY` である。大文字小文字は区別しない。
-- `email_log`は、[Mailable](https://readouble.com/laravel/5.5/ja/mail)で派生したクラスを必要に応じて変更すること。
+- `email_log`は、 [Mailable](https://readouble.com/laravel/8.x/ja/mail) で派生したクラスを必要に応じて変更すること。
 ログメールを送る。  
-- `email_send_limit`は、[Mailable](https://readouble.com/laravel/5.5/ja/mail)で派生したクラスを必要に応じて変更すること。
+- `email_send_limit`は、 [Mailable](https://readouble.com/laravel/8.x/ja/mail) で派生したクラスを必要に応じて変更すること。
 メールの送信制限`max_email_send_count`を超えた時に送る。  
 - `max_email_send_count`は、1日に送れるログメール。送信数を超えると簡単な警告メールが送られてくる。`email_send_level`参照。
 - `to`は、メールの送信先。

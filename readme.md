@@ -2,7 +2,7 @@
 Save logs handled by Laravel in Mysql, and send mail when it is over specified level.
 
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
-[![composer version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://github.com/kaoken/laravel-db-email-log)
+[![composer version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/kaoken/laravel-db-email-log)
 [![licence](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/kaoken/laravel-db-email-log)
 [![laravel version](https://img.shields.io/badge/Laravel%20version-≧8.77.1-red.svg)](https://github.com/kaoken/laravel-db-email-log)
 
@@ -98,9 +98,9 @@ In case of `false`, do not send anything.
 - `email_send_level` specifies the log level and send from the specified log level or higher.
 Since the priority is low, `DEBUG`、`INFO`、`NOTICE`、`WARNING`、
 `ERROR`、`CRITICAL`、`ALERT`、`EMERGENCY`.Capital letters and lower case letters are not distinguished.
-- `email_log` should modify the class derived from [Mailable](https://laravel.com/docs/5.5/mail) as necessary.
+- `email_log` should modify the class derived from [Mailable](https://laravel.com/docs/8.x/mail) as necessary.
 Send log mail. 
-- `email_send_limit` should modify the class derived from [Mailable](https://laravel.com/docs/5.5/mail) as necessary.
+- `email_send_limit` should modify the class derived from [Mailable](https://laravel.com/docs/8.x/mail) as necessary.
 Send when e-mail transmission limit `max_email_send_count` is exceeded. 
 - `max_email_send_count`, the log e-mail that can be transmitted in one day.
  A simple warning mail is sent when the number exceeds the number of transmissions. See `email_send_level`.
